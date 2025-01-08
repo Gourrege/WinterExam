@@ -14,11 +14,14 @@ namespace WinterExam
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
+    //Testind GITHUB
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
         }
+        public void TestingGIT() { };
     }
 }
