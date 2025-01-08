@@ -27,6 +27,8 @@ namespace WinterExam
 
         public int CompareTo(Event? other)
         {
+            Event @event = other as Event;
+
             throw new NotImplementedException();
         }
         public override string ToString()
