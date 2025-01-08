@@ -29,6 +29,7 @@ namespace WinterExam
 
         private void Liam_and_Noels_Ticket_Oasis_Loaded(object sender, RoutedEventArgs e)
         {
+            //events created
             Event e1 = new Event() 
             {
                 Name = "Oasis Croke Park",
@@ -43,6 +44,7 @@ namespace WinterExam
                 TypeOfEvent = Event.EventType.Music.ToString(),
                 Tickets = new List<Ticket>()
             };
+            //Tickets Created
             Ticket t1 = new Ticket() 
             {
                 Name = "Early Bird",
@@ -74,6 +76,8 @@ namespace WinterExam
 
             };
 
+            //Adding Tickets and Events to Lists
+
             e1.Tickets.Add(t1);
             e1.Tickets.Add(t2);
             e1.Tickets.Add(vT1);
@@ -86,7 +90,7 @@ namespace WinterExam
             events.Add(e2);
 
 
-
+            //First Test of the Display and ToString Functions
             //lstbxTickets.ItemsSource = e1.Tickets;
             //lstbxTickets.ItemsSource = e2.Tickets;
             lstbxEvents.ItemsSource = events;
@@ -112,13 +116,16 @@ namespace WinterExam
                 UpdateSelected(selected);
             }
         }
-
+        //Event Click Display Tickets
         private void UpdateSelected(Event selected) 
         {
+            //The Both events have the same tickets so clicking the other event shows the same tickets.
+            //ReLoad the Window and click the other option.
             lstbxTickets.ItemsSource = selected.Tickets;
 
 
         }
+        //Booking Tickets but doesnt fully work, needed more time
         public int BookingTickets(int availableTickets) 
         {
             int updatedTickets = 0;
@@ -132,7 +139,7 @@ namespace WinterExam
             
             return updatedTickets;
         }
-
+        //Comment Out for the XAML to run
         private void btnBookTicket_Click(object sender, RoutedEventArgs e)
         {
             BookingTickets(tbxNumTickets.GetValue());
