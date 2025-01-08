@@ -29,10 +29,7 @@ namespace WinterExam
 
         //Metods
 
-        public void BookingTicket()
-        {
-
-        }
+        
 
         public override string ToString()
         {

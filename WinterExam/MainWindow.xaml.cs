@@ -87,8 +87,8 @@ namespace WinterExam
 
 
 
-            lstbxTickets.ItemsSource = e1.Tickets;
-            lstbxTickets.ItemsSource = e2.Tickets;
+            //lstbxTickets.ItemsSource = e1.Tickets;
+            //lstbxTickets.ItemsSource = e2.Tickets;
             lstbxEvents.ItemsSource = events;
 
         }
@@ -98,8 +98,44 @@ namespace WinterExam
             Ticket selected = lstbxTickets.SelectedItem as Ticket;
             if (selected != null)
             {
+                BookingTickets(selected.AvailableTickets);
+
+
+            }
+        }
+
+        private void lstbxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Event selected = lstbxEvents.SelectedItem as Event;
+            if (selected != null)
+            {
+                UpdateSelected(selected);
+            }
+        }
+
+        private void UpdateSelected(Event selected) 
+        {
+            lstbxTickets.ItemsSource = selected.Tickets;
+
+
+        }
+        public int BookingTickets(int availableTickets) 
+        {
+            int updatedTickets = 0;
+
+            if (availableTickets > 0) 
+            {
+
+                
                 
             }
+            
+            return updatedTickets;
+        }
+
+        private void btnBookTicket_Click(object sender, RoutedEventArgs e)
+        {
+            BookingTickets(tbxNumTickets.GetValue());
         }
     }
 }
