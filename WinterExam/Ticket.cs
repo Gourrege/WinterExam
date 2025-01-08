@@ -22,7 +22,6 @@ namespace WinterExam
             Price = price;
             AvailableTickets = availableTickets;
 
-
         }
 
         public Ticket() { }
@@ -30,6 +29,15 @@ namespace WinterExam
 
         //Metods
 
+        public void BookingTicket()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return $"{Name},{Price:c},{AvailableTickets}";
+        }
 
     }
 }
